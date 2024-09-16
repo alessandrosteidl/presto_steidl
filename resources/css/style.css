@@ -1,0 +1,15 @@
+.auth-form-width {
+  width: 220px;
+}
+
+.fs-8 {
+  font-size: 12px;
+}
+
+.form-width {
+  width: 300px;
+}
+
+.vh-100-with-navbar {
+  height: calc(100vh - 56px);
+}

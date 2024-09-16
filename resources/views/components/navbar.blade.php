@@ -9,6 +9,31 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">Home</a>
         </li>
+        @auth
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Hi, {{ Auth::user()->name }}!
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                <form action="{{ route('logout') }}" method="POST" class="d-none" id="form-logout">
+                  @csrf
+                </form>
+              </li>
+            </ul>
+          </li>
+        @else
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Hi, user!
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+              <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+            </ul>
+          </li>
+        @endauth
       </ul>
     </div>
   </div>
