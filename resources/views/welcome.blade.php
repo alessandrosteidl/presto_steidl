@@ -1,10 +1,12 @@
 <x-layout title="Homepage">
     <div class="container-fluid">
-        <div class="row vh-100 justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center">
             <div class="col-12">
-                <h1 class="display-4">
-                    Presto.it
-                </h1>
+                <div class="d-flex justify-content-end">
+                    @auth
+                        <a href="{{ route('articles.create') }}" class="btn btn-primary my-3">Inserisci un articolo</i></a>
+                    @endauth
+                </div>
             </div>
         </div>
     </div>

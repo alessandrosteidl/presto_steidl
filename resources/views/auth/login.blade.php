@@ -8,7 +8,7 @@
           </div>
           <div class="col-12 col-md-6">
             <div class="d-flex flex-column justify-content-center align-items-center p-5">
-              <h1 class="fs-3 mb-4">Login!</h1>
+              <h1 class="fs-3 mb-4">Accedi!</h1>
               <form action="{{ route('login') }}" method="POST" class="auth-form-width">
                 @csrf
                 <div class="mb-3">
@@ -25,7 +25,7 @@
                     <p class="text-danger fst-italic fs-8">{{ $message }}</p>
                   @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">Accedi</button>
               </form>
             </div>
           </div>

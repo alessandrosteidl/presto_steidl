@@ -12,11 +12,14 @@
         @auth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Hi, {{ Auth::user()->name }}!
+              Ciao, {{ Auth::user()->name }}!
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                <a href="{{ route('articles.create') }}" class="dropdown-item">Inserisci un articolo</a>
+              </li>
+              <li>
+                <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Esci</a>
                 <form action="{{ route('logout') }}" method="POST" class="d-none" id="form-logout">
                   @csrf
                 </form>
@@ -26,11 +29,11 @@
         @else
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Hi, user!
+              Ciao, utente!
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-              <li><a class="dropdown-item" href="{{ route('register') }}">Register</a></li>
+              <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
+              <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
             </ul>
           </li>
         @endauth
