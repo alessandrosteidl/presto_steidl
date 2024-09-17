@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+
 :root {
-  --main: rgb(68, 141, 57);
-  --sec: rgb(86, 85, 84);
-  --acc: rgb(46, 134, 171);
+  --main: rgb(68, 175, 105);
+  --sec: rgb(46, 56, 46);
+  --acc: rgb(183, 209, 218);
+  --red: rgb(139, 0, 0);
+
+  --swiper-navigation-color: rgb(68, 175, 105);
+  --swiper-pagination-color: rgb(68, 175, 105);
 }
 
 .bg-main {
@@ -26,6 +33,10 @@
 
 .text-acc {
   color: var(--acc);
+}
+
+.text-red {
+  color: var(--red);
 }
 
 .auth-form-width {
@@ -55,4 +66,21 @@
 .swiper {
   width: 325px;
   height: 325px;
+}
+
+.pagination > li > a, .pagination > li > span { 
+  color: var(--main); 
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover { 
+  background-color: var(--main); 
+  border-color: var(--main); 
+}
+
+.app-font {
+  font-family: "Roboto", sans-serif;
+}
+
+.display-font {
+  font-family: "Teko", sans-serif;
 }

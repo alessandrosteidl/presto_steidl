@@ -4,13 +4,10 @@
             <div class="col-12">
                 <div class="d-flex justify-content-end">
                     @auth
-                        <a href="{{ route('articles.create') }}" class="btn btn-primary mb-3">Inserisci un articolo</i></a>
+                        <a href="{{ route('articles.create') }}" class="btn btn-dark mb-3">Inserisci un articolo</i></a>
                     @endauth
                 </div>
             </div>
-            <div class="col-12">
-                <h1 class="fs-3 text-center mb-3">Gli articoli più recenti</h1>
-              </div>
             @forelse ($articles as $article)
                 <div class="col-12 col-md-6 col-lg-4 mb-3">
                     <x-article-card :article="$article" />
