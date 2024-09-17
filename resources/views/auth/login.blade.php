@@ -1,6 +1,6 @@
 <x-layout title="Login">
   <div class="container-fluid">
-    <div class="row justify-content-center align-items-center vh-100-with-navbar">
+    <div class="row justify-content-center align-items-center vh-100-auth">
       <div class="col-8">
         <div class="row border border-secondary rounded shadow">
           <div class="col-12 col-md-6 bg-secondary">

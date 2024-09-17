@@ -1,4 +1,4 @@
-<x-layout title="Homepage">
+<x-layout title="Indice degli articoli">
     <div class="container-fluid">
         <div class="row align-items-center mt-3">
             <div class="col-12">
@@ -9,10 +9,10 @@
                 </div>
             </div>
             <div class="col-12">
-                <h1 class="fs-3 text-center mb-3">Gli articoli più recenti</h1>
-              </div>
+              <h1 class="fs-3 text-center mb-3">Tutti i nostri articoli</h1>
+            </div>
             @forelse ($articles as $article)
-                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                <div class="col-12 col-lg-4 mb-3">
                     <x-article-card :article="$article" />
                 </div>
             @empty
@@ -21,5 +21,10 @@
                 </div>
             @endforelse
         </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div>
+        {{ $articles->links() }}
+      </div>
     </div>
 </x-layout>

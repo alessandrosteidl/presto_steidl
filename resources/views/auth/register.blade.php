@@ -1,7 +1,7 @@
 <x-layout title="Registrazione">
   <div class="container-fluid">
     <div class="row justify-content-center align-items-center">
-      <div class="col-12 d-flex flex-column justify-content-center align-items-center vh-100-with-navbar">
+      <div class="col-12 d-flex flex-column justify-content-center align-items-center vh-100-auth">
         <h1 class="fs-3 mb-4">Registrati!</h1>
         <form action="{{ route('register') }}" method="POST" class="form-width">
           @csrf

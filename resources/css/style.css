@@ -1,3 +1,33 @@
+:root {
+  --main: rgb(68, 141, 57);
+  --sec: rgb(86, 85, 84);
+  --acc: rgb(46, 134, 171);
+}
+
+.bg-main {
+  background-color: var(--main);
+}
+
+.bg-sec {
+  background-color: var(--sec);
+}
+
+.bg-acc {
+  background-color: var(--acc);
+}
+
+.text-main {
+  color: var(--main);
+}
+
+.text-sec {
+  color: var(--sec);
+}
+
+.text-acc {
+  color: var(--acc);
+}
+
 .auth-form-width {
   width: 220px;
 }
@@ -11,5 +41,18 @@
 }
 
 .vh-100-with-navbar {
-  height: calc(100vh - 56px);
+  min-height: calc(100vh - 128px);
+}
+
+.vh-100-auth {
+  min-height: calc(100vh - 112px);
+}
+
+.article-card-width {
+  width: 300px;
+}
+
+.swiper {
+  width: 325px;
+  height: 325px;
 }
