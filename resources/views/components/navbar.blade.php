@@ -27,6 +27,12 @@
             @endforeach
           </ul>
         </li>
+        <li class="nav-item mx-auto">
+          <form class="d-flex" role="search" action="{{ route('articles.search') }}" method="GET">
+            <input class="form-control me-2" type="search" name="query" placeholder="Cerca" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">Cerca</button>
+          </form>
+        </li>
         @auth
         @if (Auth::user()->is_revisor)
           <li class="nav-item">
