@@ -27,7 +27,7 @@
     <div class="mb-3">
         <label for="category" class="form-label">Categoria</label>
         <select wire:model.blur="category" id="category" class="form-control @error('category') is-invalid @enderror">
-            <option value="{{ null }}" label disabled>Seleziona una categoria</option>
+            <option value="{{ -1 }}" label disabled selected>Seleziona una categoria</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach

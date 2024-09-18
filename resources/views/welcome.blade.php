@@ -1,5 +1,11 @@
 <x-layout title="Homepage">
     <div class="container-fluid">
+        @if (session('success'))
+            <div class="alert alert-success text-center my-3">{{ session('success') }}</div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger text-center my-3">{{ session('error') }}</div>
+        @endif
         <div class="row align-items-center mt-3">
             <div class="col-12">
                 <div class="d-flex justify-content-end">

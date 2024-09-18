@@ -47,16 +47,20 @@
   font-size: 12px;
 }
 
+.fs-9 {
+  font-size: 10px;
+}
+
 .form-width {
   width: 300px;
 }
 
 .vh-100-with-navbar {
-  min-height: calc(100vh - 128px);
+  min-height: calc(100vh - 142px);
 }
 
 .vh-100-auth {
-  min-height: calc(100vh - 112px);
+  min-height: calc(100vh - 126px);
 }
 
 .article-card-width {
@@ -83,4 +87,8 @@
 
 .display-font {
   font-family: "Teko", sans-serif;
+}
+
+.navbar-height {
+  height: 70px;
 }
