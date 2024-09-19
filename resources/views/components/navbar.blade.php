@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-main text-dark shadow navbar-height">
+<nav class="navbar navbar-expand-lg bg-body-tertiary text-dark navbar-height">
   <div class="container-fluid">
-    <a class="navbar-brand ps-5" href="{{ route('homepage') }}">Presto.it</a>
+    <a class="navbar-brand ps-lg-5" href="{{ route('homepage') }}">Presto.it</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,29 +27,28 @@
             @endforeach
           </ul>
         </li>
-        <li class="nav-item mx-auto">
+        <li class="nav-item mx-lg-auto">
           <form class="d-flex" role="search" action="{{ route('articles.search') }}" method="GET">
-            <input class="form-control me-2" type="search" name="query" placeholder="Cerca" aria-label="Search">
+            <input class="form-control me-2 search-width" type="search" name="query" placeholder="Cerca" aria-label="Search">
             <button class="btn btn-outline-dark" type="submit">Cerca</button>
           </form>
         </li>
         @auth
-        @if (Auth::user()->is_revisor)
-          <li class="nav-item">
-            <a class="nav-link position-relative" aria-current="page" href="{{ route('revisor.index') }}">
-              Area revisori
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {{ \App\Models\Article::countToBeRevised() }}
-              </span>
-            </a>
-          </li>
-        @endif
-          <li class="nav-item dropdown ms-auto">
+          <li class="nav-item dropdown ms-lg-auto">
             <a class="nav-link dropdown-toggle pe-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Ciao, {{ Auth::user()->name }}!
             </a>
             <ul class="dropdown-menu">
-              @if (!Auth::user()->is_revisor)
+              @if (Auth::user()->is_revisor)
+                <li class="nav-item">
+                  <a class="dropdown-item" href="{{ route('revisor.index') }}">
+                    Area revisori
+                    <span class="badge rounded-pill bg-dark">
+                      {{ \App\Models\Article::countToBeRevised() }}
+                    </span>
+                  </a>
+                </li>
+              @else
                 <li>
                   <a href="{{ route('become.revisor') }}" class="dropdown-item">Diventa revisore</a>
                 </li>

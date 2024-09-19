@@ -7,8 +7,10 @@
   --acc: rgb(183, 209, 218);
   --red: rgb(139, 0, 0);
 
-  --swiper-navigation-color: rgb(68, 175, 105);
-  --swiper-pagination-color: rgb(68, 175, 105);
+  --swiper-chevron: rgba(125, 125, 125);
+
+  --swiper-navigation-color: var(--swiper-chevron);
+  --swiper-pagination-color: var(--swiper-chevron);
 }
 
 .bg-main {
@@ -52,7 +54,7 @@
 }
 
 .form-width {
-  width: 300px;
+  width: 250px;
 }
 
 .vh-100-with-navbar {
@@ -63,32 +65,52 @@
   min-height: calc(100vh - 126px);
 }
 
-.article-card-width {
+.article-card {
   width: 300px;
 }
 
-.swiper {
-  width: 325px;
-  height: 325px;
-}
-
 .pagination > li > a, .pagination > li > span { 
-  color: var(--main); 
+  color: var(--bs-dark);
 }
 
 .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover { 
-  background-color: var(--main); 
-  border-color: var(--main); 
+  background-color: var(--bs-dark);
+  border-color:var(--bs-dark);
 }
 
 .app-font {
   font-family: "Roboto", sans-serif;
 }
 
-.display-font {
-  font-family: "Teko", sans-serif;
+.navbar-height {
+  min-height: 70px;
 }
 
-.navbar-height {
-  height: 70px;
+.swiper-detail {
+  width: 325px;
+  height: 325px;
+}
+
+.search-width {
+  max-width: 208px;
+}
+
+.swiper-button-prev {
+  min-width: 50px;
+  min-height: 50px;
+  background-color: var(--swiper-chevron);
+  /* background-image: url("C:\\Users\\aless\\hackademy\\laravel\\presto_steidl\\node_modules\\bootstrap-icons\\icons\\chevron-left.svg"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.swiper-button-next {
+  min-width: 50px;
+  min-height: 50px;
+  background-color: var(--swiper-chevron);
+  /* background-image: url("C:\\Users\\aless\\hackademy\\laravel\\presto_steidl\\node_modules\\bootstrap-icons\\icons\\chevron-right.svg"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
 }

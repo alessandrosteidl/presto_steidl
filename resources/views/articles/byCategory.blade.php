@@ -4,9 +4,10 @@
         <div class="col-12">
             <div class="d-flex justify-content-end">
                 @auth
-                    <a href="{{ route('articles.create') }}" class="btn btn-dark mb-3">Inserisci un articolo</i></a>
+                    <a href="{{ route('articles.create') }}" class="btn btn-outline-dark mb-3">Inserisci un articolo</i></a>
                 @endauth
             </div>
+            <h1 class="my-5 text-center">{{ $category->name }}</h1>
         </div>
         @forelse ($articles as $article)
             <div class="col-12 col-md-6 col-lg-4 mb-3">

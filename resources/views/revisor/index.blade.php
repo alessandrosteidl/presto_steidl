@@ -3,17 +3,17 @@
     @if (session('success'))
         <div class="alert alert-success text-center my-3">{{ session('success') }}</div>
     @endif
-    <div class="row mt-5">
-      <div class="col-12">
-        <h2>Revisiona questo annuncio</h2>
-      </div>
-    </div>
     @if ($article_to_check)
+      <div class="row mt-5">
+        <div class="col-12">
+          <h2>Revisiona questo annuncio</h2>
+        </div>
+      </div>
       <div class="row mt-5">
         <div class="col-12">
           <div class="d-flex flex-column flex-md-row mt-3">
             <div>
-              <div class="swiper">
+              <div class="swiper swiper-show" style="width: 325px; height: 325px;">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                   <!-- Slides -->
@@ -37,7 +37,7 @@
               <p class="fs-3">{{ $article_to_check->price }} €</p>
               <a href="{{ route('articles.byCategory', [ 'category' => $article_to_check->category ]) }}">
                 <h2>
-                  <span class="badge bg-main text-dark">{{ $article_to_check->category->name }}</span>
+                  <span class="badge text-bg-secondary">{{ $article_to_check->category->name }}</span>
                 </h2>
               </a>
               <p class="mt-3 fs-4">Created by {{ $article_to_check->user->name }} {{ $article_to_check->created_at->diffForHumans() }}</p>

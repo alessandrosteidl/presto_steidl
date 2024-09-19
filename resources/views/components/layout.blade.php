@@ -7,7 +7,7 @@
   <title>Presto.it | {{ $title }}</title>
   @vite('resources/css/app.css')
 </head>
-<body class="app-font">
+<body class="app-font bg-body-tertiary">
   <x-navbar />
   <div class="vh-100-with-navbar">
     {{ $slot }}
