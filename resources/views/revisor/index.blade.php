@@ -17,9 +17,9 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                   <!-- Slides -->
-                  <div class="swiper-slide"><img src="http://picsum.photos/325" alt=""></div>
-                  <div class="swiper-slide"><img src="http://picsum.photos/326" alt=""></div>
-                  <div class="swiper-slide"><img src="http://picsum.photos/327" alt=""></div>
+                  @foreach ($article_to_check->images as $image)
+                    <div class="swiper-slide"><img src="{{ Storage::url($image->path) }}" alt=""></div>
+                  @endforeach
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>

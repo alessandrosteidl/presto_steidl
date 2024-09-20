@@ -39,6 +39,33 @@
               <p class="text-danger fst-italic fs-8">{{ $message }}</p>
             @enderror
         </div>
+        <div class="mb-3">
+          <label for="images" class="form-label">Immagini</label>
+          <input type="file" class="form-control @error('temporary_images.*') is-invalid @enderror" id="price" wire:model.live="temporary_images" multiple placeholder="Img/">
+          @error('temporary_images.*')
+            <p class="text-danger fst-italic fs-8">{{ $message }}</p>
+          @enderror
+          @error('temporary_images')
+            <p class="text-danger fst-italic fs-8">{{ $message }}</p>
+          @enderror
+        </div>
+        @if (!empty($images))
+          <div class="row mb-3">
+            <div class="col-12">
+              <p>Anteprima</p>
+              <div class="row border border-1 border-dark rounded">
+                @foreach ($images as $key => $image)
+                  <div class="col d-flex flex-column align-items-center my-3">
+                    <div class="img-preview mx-auto rounded" style="background-image: url({{ $image->temporaryUrl() }});"></div>
+                    <div class="w-100 d-flex justify-content-end">
+                      <button class="btn btn-outline-danger mt-2" wire:click="removeImage({{ $key }})"><i class="bi bi-x"></i></button>
+                    </div>
+                  </div>
+                @endforeach
+              </div>
+            </div>
+          </div>
+        @endif
         <button type="submit" class="btn btn-outline-dark">Inserisci</button>
       </form>
     </div>

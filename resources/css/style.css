@@ -114,3 +114,11 @@
   background-position: center;
   border-radius: 50%;
 }
+
+.img-preview {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  width: 250px;
+}
