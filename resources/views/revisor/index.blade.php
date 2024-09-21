@@ -45,12 +45,12 @@
                 <form action="{{ route('articles.reject', [ 'article' => $article_to_check ]) }}" method="POST">
                   @csrf
                   @method('PATCH')
-                  <button class="btn btn-danger me-2">Rifiuta</button>
+                  <button class="btn btn-outline-danger me-2">Rifiuta</button>
                 </form>
                 <form action="{{ route('articles.accept', [ 'article' => $article_to_check ]) }}" method="POST">
                   @csrf
                   @method('PATCH')
-                  <button class="btn btn-success">Accetta</button>
+                  <button class="btn btn-outline-success">Accetta</button>
                 </form>
               </div>
             </div>

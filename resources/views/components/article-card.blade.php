@@ -1,5 +1,5 @@
 <div class="card mx-auto article-card border-1 p-2">
-  <img src="https://picsum.photos/300" class="card-img-top rounded" alt="Immagine dell'articolo {{ $article->title }}">
+  <img src="{{ Storage::url($article->images->first()->path) }}" class="card-img-top rounded" alt="Immagine dell'articolo {{ $article->title }}">
   <div class="card-body px-1">
     <h5 class="card-title text-dark text-truncate">{{ $article->title }}</h5>
     <h6 class="card-subtitle text-dark mb-1">By {{ $article->user->name }}</h6>

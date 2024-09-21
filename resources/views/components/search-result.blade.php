@@ -1,7 +1,7 @@
 <div class="card border-0 bg-body-tertiary">
   <div class="row g-0">
     <div class="col-md-4 col-lg-3 col-xl-2">
-      <img src="https://picsum.photos/130" class="rounded" alt="...">
+      <img src="{{ Storage::url($article->images->first()->path) }}" class="rounded" alt="...">
     </div>
     <div class="col-md-8 col-lg-9 col-xl-10">
       <div class="card-body px-0 p-xl-4">
