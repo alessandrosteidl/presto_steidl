@@ -18,7 +18,7 @@
                 <div class="swiper-wrapper">
                   <!-- Slides -->
                   @foreach ($article_to_check->images as $image)
-                    <div class="swiper-slide"><img src="{{ Storage::url($image->path) }}" alt=""></div>
+                    <div class="swiper-slide"><img src="{{ $image->getUrl(325, 325) }}" alt=""></div>
                   @endforeach
                 </div>
                 <!-- If we need pagination -->
