@@ -7,7 +7,7 @@
       <div class="card-body px-0 p-xl-4">
         <h5 class="card-title text-truncate">{{ $article->title }}</h5>
         <p class="card-text text-truncate">{{ $article->description }}</p>
-        <a href="{{ route('articles.show', compact('article')) }}" class="card-link text-decoration-none">Scopri di più ></a>
+        <a href="{{ route('articles.show', compact('article')) }}" class="card-link text-decoration-none">{{ __('ui.findOutMore') }}</a>
       </div>
     </div>
   </div>

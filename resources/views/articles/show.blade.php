@@ -1,4 +1,4 @@
-<x-layout title="Scopri di più">
+<x-layout title="{{ __('ui.showArticle') }}">
   <div class="container">
     <div class="row mt-3">
       <div class="col-12">
@@ -28,10 +28,10 @@
             <p class="fs-3">{{ $article->price }} €</p>
             <a href="{{ route('articles.byCategory', [ 'category' => $article->category ]) }}">
               <h2>
-                <span class="badge text-bg-secondary">{{ $article->category->name }}</span>
+                <span class="badge text-bg-secondary">{{ __('ui.' . $article->category->name) }}</span>
               </h2>
             </a>
-            <p class="mt-3 fs-4">Created by {{ $article->user->name }} {{ $article->created_at->diffForHumans() }}</p>
+            <p class="mt-3 fs-4">{{ __('ui.insertedBy') }} {{ $article->user->name }} {{ $article->created_at->diffForHumans() }}</p>
           </div>
         </div>
         <div class="my-3">

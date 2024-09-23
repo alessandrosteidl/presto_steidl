@@ -1,4 +1,4 @@
-<x-layout title="Revisiona">
+<x-layout title="{{ __('ui.reviewArticle') }}">
   <div class="container">
     @if (session('success'))
         <div class="alert alert-success text-center my-3">{{ session('success') }}</div>
@@ -6,7 +6,7 @@
     @if ($article_to_check)
       <div class="row mt-5">
         <div class="col-12">
-          <h2>Revisiona questo annuncio</h2>
+          <h2>{{ __('ui.review') }}</h2>
         </div>
       </div>
       <div class="row mt-5">
@@ -37,20 +37,20 @@
               <p class="fs-3">{{ $article_to_check->price }} €</p>
               <a href="{{ route('articles.byCategory', [ 'category' => $article_to_check->category ]) }}">
                 <h2>
-                  <span class="badge text-bg-secondary">{{ $article_to_check->category->name }}</span>
+                  <span class="badge text-bg-secondary">{{ __('ui.'. $article_to_check->category->name) }}</span>
                 </h2>
               </a>
-              <p class="mt-3 fs-4">Created by {{ $article_to_check->user->name }} {{ $article_to_check->created_at->diffForHumans() }}</p>
+              <p class="mt-3 fs-4">{{ __('ui.insertedBy') }} {{ $article_to_check->user->name }} {{ $article_to_check->created_at->diffForHumans() }}</p>
               <div class="d-flex">
                 <form action="{{ route('articles.reject', [ 'article' => $article_to_check ]) }}" method="POST">
                   @csrf
                   @method('PATCH')
-                  <button class="btn btn-outline-danger me-2">Rifiuta</button>
+                  <button class="btn btn-outline-danger me-2">{{ __('ui.reject') }}</button>
                 </form>
                 <form action="{{ route('articles.accept', [ 'article' => $article_to_check ]) }}" method="POST">
                   @csrf
                   @method('PATCH')
-                  <button class="btn btn-outline-success">Accetta</button>
+                  <button class="btn btn-outline-success">{{ __('ui.accept') }}</button>
                 </form>
               </div>
             </div>
@@ -63,7 +63,7 @@
     @else
       <div class="row mt-5">
         <div class="col-12">
-          <h2>Attualmente non sono presenti annunci da revisionare</h2>
+          <h2>{{ __('ui.noArticlesToReview') }}</h2>
         </div>
       </div>
     @endif

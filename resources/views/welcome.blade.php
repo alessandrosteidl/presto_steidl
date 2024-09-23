@@ -10,10 +10,10 @@
             <div class="col-12">
                 <div class="d-flex justify-content-end">
                     @auth
-                        <a href="{{ route('articles.create') }}" class="btn btn-outline-dark mb-3">Inserisci un articolo</a>
+                        <a href="{{ route('articles.create') }}" class="btn btn-outline-dark mb-3">{{ __('ui.insertArticle') }}</a>
                     @endauth
                 </div>
-                <h1 class="my-5 text-center">I nostri articoli più recenti</h1>
+                <h1 class="my-5 text-center">{{ __('ui.recentArticles') }}</h1>
             </div>
             @if ($articles->count() > 0)
                 <div class="swiper swiper-welcome-xxl d-none d-xxl-block">
@@ -94,7 +94,7 @@
                 </div>
             @else
                 <div class="col-12 mb-3">
-                    <h2 class="text-center fs-3">Non sono ancora stati creati articoli</h2>
+                    <h2 class="text-center fs-3">{{ __('ui.noInsertedArticles') }}</h2>
                 </div>
             @endif
         </div>

@@ -7,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav w-100">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">Home</a>
+          <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">{{ __('ui.home') }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{{ route('articles.index') }}">Tutti gli articoli</a>
+          <a class="nav-link" aria-current="page" href="{{ route('articles.index') }}">{{ __('ui.articles') }}</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categorie
+            {{ __('ui.categories') }}
           </a>
           <ul class="dropdown-menu">
             @foreach ($categories as $category)
               <li>
-                <a href="{{ route('articles.byCategory', compact('category')) }}" class="dropdown-item text-capitalize">{{ $category->name }}</a>
+                <a href="{{ route('articles.byCategory', compact('category')) }}" class="dropdown-item">{{ __('ui.' . $category->name) }}</a>
               </li>
               @if (!$loop->last)
                 <hr class="dropdown-divider" />
@@ -27,22 +27,38 @@
             @endforeach
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle pe-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ __('ui.languages') }}
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <x-_locale lang="it" />
+            </li>
+            <li>
+              <x-_locale lang="en" />
+            </li>
+            <li>
+              <x-_locale lang="de" />
+            </li>
+          </ul>
+        </li>
         <li class="nav-item mx-lg-auto">
           <form class="d-flex" role="search" action="{{ route('articles.search') }}" method="GET">
-            <input class="form-control me-2 search-width" type="search" name="query" placeholder="Cerca" aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit">Cerca</button>
+            <input class="form-control me-2 search-width" type="search" name="query" placeholder="{{ __('ui.search') }}" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">{{ __('ui.search') }}</button>
           </form>
         </li>
         @auth
           <li class="nav-item dropdown ms-lg-auto">
             <a class="nav-link dropdown-toggle pe-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ciao, {{ Auth::user()->name }}!
+              {{ __('ui.hi') }}, {{ Auth::user()->name }}!
             </a>
             <ul class="dropdown-menu">
               @if (Auth::user()->is_revisor)
                 <li class="nav-item">
                   <a class="dropdown-item" href="{{ route('revisor.index') }}">
-                    Area revisori
+                    {{ __('ui.revisorsArea') }}
                     <span class="badge rounded-pill bg-dark">
                       {{ \App\Models\Article::countToBeRevised() }}
                     </span>
@@ -50,11 +66,11 @@
                 </li>
               @else
                 <li>
-                  <a href="{{ route('become.revisor') }}" class="dropdown-item">Diventa revisore</a>
+                  <a href="{{ route('become.revisor') }}" class="dropdown-item">{{ __('ui.becomeRevisor') }}</a>
                 </li>
               @endif
               <li>
-                <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Esci</a>
+                <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">{{ __('ui.exit') }}</a>
                 <form action="{{ route('logout') }}" method="POST" class="d-none" id="form-logout">
                   @csrf
                 </form>
@@ -64,11 +80,11 @@
         @else
           <li class="nav-item dropdown ms-auto">
             <a class="nav-link dropdown-toggle pe-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Ciao, utente!
+              {{ __('ui.hi') }}, {{ __('ui.user') }}!
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-              <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+              <li><a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.login') }}</a></li>
+              <li><a class="dropdown-item" href="{{ route('register') }}">{{ __('ui.register') }}</a></li>
             </ul>
           </li>
         @endauth

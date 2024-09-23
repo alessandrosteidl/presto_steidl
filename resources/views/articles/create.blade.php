@@ -1,4 +1,4 @@
-<x-layout title="Inserisci un articolo">
+<x-layout title="{{ __('ui.insertNewArticle') }}">
   <div class="container">
     <div class="row mt-3">
       <div class="col-12 vh-100-with-navbar d-flex justify-content-center align-items-center">

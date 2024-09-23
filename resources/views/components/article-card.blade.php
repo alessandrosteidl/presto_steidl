@@ -5,8 +5,8 @@
     <h6 class="card-subtitle text-dark mb-1">By {{ $article->user->name }}</h6>
     <h6 class="card-subtitle text-dark">{{ $article->price }} €</h6>
     <div class="d-flex my-2">
-      <a href="{{ route('articles.byCategory', [ 'category' => $article->category ]) }}"><span class="card-text badge text-bg-secondary">{{ $article->category->name }}</span></a>
+      <a href="{{ route('articles.byCategory', [ 'category' => $article->category ]) }}"><span class="card-text badge text-bg-secondary">{{ __('ui.' . $article->category->name) }}</span></a>
     </div>
-    <a href="{{ route('articles.show', compact('article')) }}" class="text-decoration-none">Scopri di più ></a>
+    <a href="{{ route('articles.show', compact('article')) }}" class="text-decoration-none">{{ __('ui.findOutMore') }}</a>
   </div>
 </div>
