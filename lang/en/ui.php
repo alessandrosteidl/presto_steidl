@@ -79,5 +79,10 @@ return [
   'noArticlesToReview' => 'There are currently no ads to review',
   'review' => 'Review this ad',
   'reject' => 'Reject',
-  'accept' => 'Accept'
+  'accept' => 'Accept',
+  'adult' => 'Adult',
+  'spoof' => 'Spoof',
+  'medical' => 'Medical',
+  'violence' => 'Violence',
+  'racy' => 'Racy'
 ];

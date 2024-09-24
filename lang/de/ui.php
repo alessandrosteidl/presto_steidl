@@ -79,5 +79,10 @@ return [
   'noArticlesToReview' => 'Derzeit gibt es keine zu überprüfenden Einträge',
   'review' => 'Überprüfen Sie diese Anzeige',
   'reject' => 'Verweigern',
-  'accept' => 'Akzeptieren'
+  'accept' => 'Akzeptieren',
+  'adult' => 'Erwachsene',
+  'spoof' => 'Parodie',
+  'medical' => 'Medizin',
+  'violence' => 'Gewalt',
+  'racy' => 'Rassig'
 ];

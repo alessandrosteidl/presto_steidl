@@ -35,9 +35,11 @@
             <li>
               <x-_locale lang="it" />
             </li>
+            <hr class="dropdown-divider" />
             <li>
               <x-_locale lang="en" />
             </li>
+            <hr class="dropdown-divider" />
             <li>
               <x-_locale lang="de" />
             </li>
@@ -69,6 +71,7 @@
                   <a href="{{ route('become.revisor') }}" class="dropdown-item">{{ __('ui.becomeRevisor') }}</a>
                 </li>
               @endif
+              <hr class="dropdown-divider" />
               <li>
                 <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">{{ __('ui.exit') }}</a>
                 <form action="{{ route('logout') }}" method="POST" class="d-none" id="form-logout">
@@ -84,6 +87,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.login') }}</a></li>
+              <hr class="dropdown-divider" />
               <li><a class="dropdown-item" href="{{ route('register') }}">{{ __('ui.register') }}</a></li>
             </ul>
           </li>

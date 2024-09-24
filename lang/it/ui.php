@@ -79,5 +79,10 @@ return [
   'noArticlesToReview' => 'Attualmente non sono presenti annunci da revisionare',
   'review' => 'Revisiona questo annuncio',
   'reject' => 'Rifiuta',
-  'accept' => 'Accetta'
+  'accept' => 'Accetta',
+  'adult' => 'Adulti',
+  'spoof' => 'Parodia',
+  'medical' => 'Medicale',
+  'violence' => 'Violento',
+  'racy' => 'Piccante'
 ];
