@@ -102,7 +102,7 @@
               </div>
             </div>
           </div>
-          <div class="my-3">
+          <div class="p-3 p-md-0 my-3">
             <p class="fs-4">{{ $article_to_check->description }}</p>
           </div>
         </div>

@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Article;
 use Livewire\Component;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
@@ -49,9 +50,11 @@ class ArticleCreationForm extends Component
             {
                 $newFileName = "articles/{$this->article->id}";
                 $newImage = $this->article->images()->create([ 'path' => $image->store($newFileName, 'public') ]);
-                dispatch(new ResizeImage($newImage->path, 325, 325));
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
-                dispatch(new GoogleVisionLabelImage($newImage->id));
+                RemoveFaces::withChain([
+                    new ResizeImage($newImage->path, 325, 325),
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisionLabelImage($newImage->id)
+                ])->dispatch($newImage->id);
             }
 
             File::deleteDirectory(storage_path('/app/livewire-tmp'));

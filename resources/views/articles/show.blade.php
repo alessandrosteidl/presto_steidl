@@ -34,7 +34,7 @@
             <p class="mt-3 fs-4">{{ __('ui.insertedBy') }} {{ $article->user->name }} {{ $article->created_at->diffForHumans() }}</p>
           </div>
         </div>
-        <div class="my-3">
+        <div class="p-3 p-md-0 my-3">
           <p class="fs-4">{{ $article->description }}</p>
         </div>
       </div>
