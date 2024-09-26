@@ -44,6 +44,12 @@ return [
 
   'findOutMore' => 'Scopri di più >',
 
+  // checked-article
+
+  'accepted' => 'Accettato',
+  'rejected' => 'Rifiutato',
+  'correct' => 'Correggi >',
+
   // articles.index
 
   'allArticles' => 'Tutti i nostri articoli',
@@ -78,11 +84,14 @@ return [
 
   'noArticlesToReview' => 'Attualmente non sono presenti annunci da revisionare',
   'review' => 'Revisiona questo annuncio',
+  'correctThisRevision' => 'Correggi questa revisione',
+  'backToReview' => 'Torna a revisionare',
   'reject' => 'Rifiuta',
   'accept' => 'Accetta',
   'adult' => 'Adulti',
   'spoof' => 'Parodia',
   'medical' => 'Medicale',
   'violence' => 'Violento',
-  'racy' => 'Piccante'
+  'racy' => 'Piccante',
+  'correctHeader' => 'Correggi le revisioni'
 ];

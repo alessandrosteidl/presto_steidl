@@ -59,7 +59,7 @@
             <ul class="dropdown-menu">
               @if (Auth::user()->is_revisor)
                 <li class="nav-item">
-                  <a class="dropdown-item" href="{{ route('revisor.index') }}">
+                  <a class="dropdown-item" href="{{ route('revisor.review') }}">
                     {{ __('ui.revisorsArea') }}
                     <span class="badge rounded-pill bg-dark">
                       {{ \App\Models\Article::countToBeRevised() }}

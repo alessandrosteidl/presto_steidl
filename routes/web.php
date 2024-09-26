@@ -14,7 +14,8 @@ Route::get('/articles/create', [ ArticleController::class, 'create' ])->name('ar
 Route::get('/articles/show/{article}', [ ArticleController::class, 'show' ])->name('articles.show');
 Route::get('/category/{category}', [ ArticleController::class, 'byCategory' ])->name('articles.byCategory');
 
-Route::get('/revisor/index', [ RevisorController::class, 'index' ])->middleware('isRevisor')->name('revisor.index');
+Route::get('/revisor/review', [ RevisorController::class, 'review' ])->middleware('isRevisor')->name('revisor.review');
+Route::get('/revisor/correct/{article}', [ RevisorController::class, 'correct' ])->middleware('isRevisor')->name('revisor.correct');
 Route::patch('/accept/{article}', [ RevisorController::class, 'accept' ])->name('articles.accept');
 Route::patch('/reject/{article}', [ RevisorController::class, 'reject' ])->name('articles.reject');
 Route::get('/revisor/request', [ RevisorController::class, 'becomeRevisor' ])->middleware('auth')->name('become.revisor');

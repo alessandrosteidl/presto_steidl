@@ -12,11 +12,22 @@ use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
-    public function index()
+    public function review()
     {
-        $article_to_check = Article::where('is_accepted', null)->first();
+        $article_to_check = Article::where('is_accepted', null)->orderBy('created_at')->first();
+        $checked_articles = Article::where('is_accepted', '!=', null)->orderBy('created_at', 'desc')->paginate(12);
+        $mode = 'review';
 
-        return view('revisor.index', compact('article_to_check'));
+        return view('revisor.index', compact('article_to_check', 'checked_articles', 'mode'));
+    }
+
+    public function correct(Article $article)
+    {
+        $article_to_check = $article;
+        $checked_articles = Article::where('is_accepted', '!=', null)->orderBy('created_at', 'desc')->paginate(12);
+        $mode = 'correct';
+
+        return view('revisor.index', compact('article_to_check', 'checked_articles', 'mode'));
     }
 
     public function accept(Article $article)

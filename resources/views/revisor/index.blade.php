@@ -4,16 +4,28 @@
         <div class="alert alert-success text-center my-3">{{ session('success') }}</div>
     @endif
     @if ($article_to_check)
-      <div class="row mt-5">
-        <div class="col-12">
-          <h2>{{ __('ui.review') }}</h2>
+      @if ($mode == 'review')
+        <div class="row mt-5">
+          <div class="col-12">
+            <h2>{{ __('ui.review') }}</h2>
+          </div>
         </div>
-      </div>
+      @endif
+      @if ($mode == 'correct')
+        <div class="d-flex justify-content-end mt-3">
+          <a href="{{ route('revisor.review') }}" class="btn btn-outline-dark mb-3">{{ __('ui.backToReview') }}</i></a>
+        </div>
+        <div class="row mt-5">
+          <div class="col-12">
+            <h2>{{ __('ui.correctThisRevision') }}</h2>
+          </div>
+        </div>
+      @endif
       <div class="row mt-5">
         <div class="col-12">
           <div class="d-flex flex-column flex-md-row mt-3">
             <div>
-              <div class="swiper swiper-show border border-2 border-dark" style="width: 325px; height: 404.5px;">
+              <div class="swiper swiper-show border border-2 border-dark" style="width: 325px; height: 575px;">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                   <!-- Slides -->
@@ -54,7 +66,7 @@
                         </div>
                         <img src="{{ $image->getUrl(325, 325) }}" alt="">
                         @if ($image->labels)
-                          <div class="w-100">
+                          <div class="w-100 p-2 mt-2">
                             <p class="fs-7 text-center text-dark mb-1">Tag</p>
                             @foreach ($image->labels as $label)
                               <span>#{{ $label }}</span>
@@ -116,4 +128,25 @@
       </div>
     @endif
   </div>
+  @if (count($checked_articles) > 0)
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-12">
+          <h2>{{ __('ui.correctHeader') }}</h2>
+        </div>
+      </div>
+      <div class="row mt-5">
+        @foreach ($checked_articles as $checked_article)
+          <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
+            <x-checked-article :article="$checked_article" />
+          </div>
+        @endforeach
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="text-dark">
+        {{ $checked_articles->links() }}
+      </div>
+    </div>
+  @endif
 </x-layout>

@@ -44,6 +44,12 @@ return [
 
   'findOutMore' => 'Find out more >',
 
+  // checked-article
+
+  'accepted' => 'Accepted',
+  'rejected' => 'Rejected',
+  'correct' => 'Correct >',
+
   // articles.index
 
   'allArticles' => 'All our articles',
@@ -78,11 +84,14 @@ return [
 
   'noArticlesToReview' => 'There are currently no ads to review',
   'review' => 'Review this ad',
+  'correctThisRevision' => 'Correct this revision',
+  'backToReview' => 'Back to review',
   'reject' => 'Reject',
   'accept' => 'Accept',
   'adult' => 'Adult',
   'spoof' => 'Spoof',
   'medical' => 'Medical',
   'violence' => 'Violence',
-  'racy' => 'Racy'
+  'racy' => 'Racy',
+  'correctHeader' => 'Correct revisions'
 ];

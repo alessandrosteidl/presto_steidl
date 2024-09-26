@@ -43,6 +43,12 @@ return [
   // cards
 
   'findOutMore' => 'Mehr erfahren >',
+  
+  // checked-article
+
+  'accepted' => 'Akzeptiert',
+  'rejected' => 'Abgelehnt',
+  'correct' => 'Richtig >',
 
   // articles.index
 
@@ -78,11 +84,14 @@ return [
 
   'noArticlesToReview' => 'Derzeit gibt es keine zu überprüfenden Einträge',
   'review' => 'Überprüfen Sie diese Anzeige',
+  'correctThisRevision' => 'Korrigieren Sie diese Revision',
+  'backToReview' => 'Rezension',
   'reject' => 'Verweigern',
   'accept' => 'Akzeptieren',
   'adult' => 'Erwachsene',
   'spoof' => 'Parodie',
   'medical' => 'Medizin',
   'violence' => 'Gewalt',
-  'racy' => 'Rassig'
+  'racy' => 'Rassig',
+  'correctHeader' => 'Revisionen korrigieren'
 ];
