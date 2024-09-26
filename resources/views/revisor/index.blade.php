@@ -17,43 +17,57 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                   <!-- Slides -->
-                  @foreach ($article_to_check->images as $image)
-                    <div class="swiper-slide">
-                      <div class="d-flex w-100 pt-3">
-                        <div class="w-20 mb-3">
-                          <p class="fs-7 text-center text-dark mb-1">{{ __('ui.adult') }}</p>
-                          <div class="text-center">
-                            <i class="{{ $image->adult }}"></i>
+                  @if (count($article_to_check->images) > 0)
+                    @foreach ($article_to_check->images as $image)
+                      <div class="swiper-slide">
+                        <div class="d-flex w-100 pt-3">
+                          <div class="w-20 mb-3">
+                            <p class="fs-7 text-center text-dark mb-1">{{ __('ui.adult') }}</p>
+                            <div class="text-center">
+                              <i class="{{ $image->adult }}"></i>
+                            </div>
+                          </div>
+                          <div class="w-20 mb-3">
+                            <p class="fs-7 text-center text-dark mb-1">{{ __('ui.spoof') }}</p>
+                            <div class="text-center">
+                              <i class="{{ $image->spoof }}"></i>
+                            </div>
+                          </div>
+                          <div class="w-20 mb-3">
+                            <p class="fs-7 text-center text-dark mb-1">{{ __('ui.medical') }}</p>
+                            <div class="text-center">
+                              <i class="{{ $image->medical }}"></i>
+                            </div>
+                          </div>
+                          <div class="w-20 mb-3">
+                            <p class="fs-7 text-center text-dark mb-1">{{ __('ui.violence') }}</p>
+                            <div class="text-center">
+                              <i class="{{ $image->violence }}"></i>
+                            </div>
+                          </div>
+                          <div class="w-20 mb-3">
+                            <p class="fs-7 text-center text-dark mb-1">{{ __('ui.racy') }}</p>
+                            <div class="text-center">
+                              <i class="{{ $image->racy }}"></i>
+                            </div>
                           </div>
                         </div>
-                        <div class="w-20 mb-3">
-                          <p class="fs-7 text-center text-dark mb-1">{{ __('ui.spoof') }}</p>
-                          <div class="text-center">
-                            <i class="{{ $image->spoof }}"></i>
+                        <img src="{{ $image->getUrl(325, 325) }}" alt="">
+                        @if ($image->labels)
+                          <div class="w-100">
+                            <p class="fs-7 text-center text-dark mb-1">Tag</p>
+                            @foreach ($image->labels as $label)
+                              <span>#{{ $label }}</span>
+                            @endforeach
                           </div>
-                        </div>
-                        <div class="w-20 mb-3">
-                          <p class="fs-7 text-center text-dark mb-1">{{ __('ui.medical') }}</p>
-                          <div class="text-center">
-                            <i class="{{ $image->medical }}"></i>
-                          </div>
-                        </div>
-                        <div class="w-20 mb-3">
-                          <p class="fs-7 text-center text-dark mb-1">{{ __('ui.violence') }}</p>
-                          <div class="text-center">
-                            <i class="{{ $image->violence }}"></i>
-                          </div>
-                        </div>
-                        <div class="w-20 mb-3">
-                          <p class="fs-7 text-center text-dark mb-1">{{ __('ui.racy') }}</p>
-                          <div class="text-center">
-                            <i class="{{ $image->racy }}"></i>
-                          </div>
-                        </div>
+                        @endif
                       </div>
-                      <img src="{{ $image->getUrl(325, 325) }}" alt="">
+                    @endforeach
+                  @else
+                    <div class="swiper-slide">
+                      <img src="{{ Storage::url('public/default/logo_default_big.jpg') }}" alt="The Presto.it logo">
                     </div>
-                  @endforeach
+                  @endif
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
@@ -86,19 +100,6 @@
                   @method('PATCH')
                   <button class="btn btn-outline-success">{{ __('ui.accept') }}</button>
                 </form>
-              </div>
-              <div>
-                <h5 class="fs-3 text-dark mt-3">Labels</h5>
-                @if ($image->labels)
-                  @foreach ($image->labels as $label)
-                    <span>{{ $label }}</span>
-                    @if (!$loop->last)
-                      <span>, </span>
-                    @endif
-                  @endforeach
-                @else
-                  <h5>No labels</h5>
-                @endif
               </div>
             </div>
           </div>

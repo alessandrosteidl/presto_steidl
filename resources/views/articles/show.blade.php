@@ -8,9 +8,13 @@
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
                 <!-- Slides -->
-                @foreach ($article->images as $image)
-                  <div class="swiper-slide"><img src="{{ $image->getUrl(325, 325) }}" alt=""></div>
-                @endforeach
+                @if (count($article->images) > 0)
+                  @foreach ($article->images as $image)
+                    <div class="swiper-slide"><img src="{{ $image->getUrl(325, 325) }}" alt=""></div>
+                  @endforeach
+                @else
+                  <div class="swiper-slide"><img src="{{ Storage::url('public/default/logo_default.jpg') }}" alt="Logo di Presto.it"></div>
+                @endif
               </div>
               <!-- If we need pagination -->
               <div class="swiper-pagination"></div>

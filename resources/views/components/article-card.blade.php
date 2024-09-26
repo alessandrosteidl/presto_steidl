@@ -1,5 +1,9 @@
 <div class="card mx-auto article-card border-1 p-2">
-  <img src="{{ $article->images->first()->getUrl(325, 325) }}" class="card-img-top rounded" alt="Immagine dell'articolo {{ $article->title }}">
+  @if (count($article->images) > 0)
+    <img src="{{ $article->images->first()->getUrl(325, 325) }}" class="card-img-top rounded" alt="Immagine dell'articolo {{ $article->title }}">
+  @else
+    <img src="{{ Storage::url('public/default/logo_default.jpg') }}" class="card-img-top rounded" alt="Logo di Presto.it">
+  @endif
   <div class="card-body px-1">
     <h5 class="card-title text-dark text-truncate">{{ $article->title }}</h5>
     <h6 class="card-subtitle text-dark mb-1">{{ __('ui.insertedBy') }} {{ $article->user->name }}</h6>
