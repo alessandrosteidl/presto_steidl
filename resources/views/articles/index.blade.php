@@ -1,5 +1,5 @@
 <x-layout title="{{ __('ui.articlesIndex') }}">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row align-items-center mt-3">
             <div class="col-12">
                 <div class="d-flex justify-content-end">

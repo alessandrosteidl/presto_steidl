@@ -1,5 +1,5 @@
 <x-layout title="{{ __('ui.' . $category->name) }}">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row align-items-center mt-3">
         <div class="col-12">
             <div class="d-flex justify-content-end">
@@ -10,7 +10,7 @@
             <h1 class="my-5 text-center">{{ __('ui.' . $category->name) }}</h1>
         </div>
         @forelse ($articles as $article)
-            <div class="col-12 col-md-6 col-lg-4 mb-3">
+            <div class="col-12 col-md-6 col-lg-4 col-xxl-3 mb-3">
                 <x-article-card :article="$article" />
             </div>
         @empty
