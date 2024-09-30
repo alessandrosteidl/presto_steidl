@@ -35,6 +35,7 @@
                     <label for="category" class="form-label">{{ __('ui.category') }}</label>
                     <select wire:model.blur="category" id="category"
                         class="form-control @error('category') is-invalid @enderror">
+                        <option value="NULL">{{ __('ui.selectACategory') }}</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ __("ui.$category->name") }}</option>
                         @endforeach

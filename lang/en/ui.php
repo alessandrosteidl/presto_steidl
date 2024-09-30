@@ -76,6 +76,7 @@ return [
   'description' => 'Description',
   'price' => 'Price',
   'category' => 'Category',
+  'selectACategory' => 'Select',
   'images' => 'Images',
   'preview' => 'Preview',
   'insert' => 'Insert',

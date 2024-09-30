@@ -81,7 +81,7 @@
             </ul>
           </li>
         @else
-          <li class="nav-item dropdown ms-auto">
+          <li class="nav-item dropdown ms-lg-auto">
             <a class="nav-link dropdown-toggle pe-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{ __('ui.hi') }}, {{ __('ui.user') }}!
             </a>
