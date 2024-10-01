@@ -1,6 +1,6 @@
 <div class="container-fluid">
     @if (session('success'))
-        <div class="alert alert-success text-center my-3">{{ session('success') }}</div>
+        <div class="alert alert-success text-center my-3">{{ __('ui.' . session('success')) }}</div>
     @endif
     <div class="row justify-content-center align-items-center vh-100-with-navbar">
         <div
@@ -12,7 +12,7 @@
                     <input type="text" class="form-control @error('title') is-invalid @enderror" id="title"
                         wire:model.blur="title" value="{{ old('title') }}">
                     @error('title')
-                        <p class="text-danger fst-italic fs-8">{{ $message }}</p>
+                        <p class="text-danger fst-italic fs-8">{{ __("ui.$message") }}</p>
                     @enderror
                 </div>
                 <div class="mb-3">
@@ -20,7 +20,7 @@
                     <textarea rows="4" class="form-control ta-no-resize @error('description') is-invalid @enderror" id="description"
                         wire:model.blur="description">{{ old('description') }}</textarea>
                     @error('description')
-                        <p class="text-danger fst-italic fs-8">{{ $message }}</p>
+                        <p class="text-danger fst-italic fs-8">{{ __("ui.$message") }}</p>
                     @enderror
                 </div>
                 <div class="mb-3">
@@ -28,7 +28,7 @@
                     <input type="text" class="form-control @error('price') is-invalid @enderror" id="price"
                         wire:model.blur="price" value="{{ old('price') }}">
                     @error('price')
-                        <p class="text-danger fst-italic fs-8">{{ $message }}</p>
+                        <p class="text-danger fst-italic fs-8">{{ __("ui.$message") }}</p>
                     @enderror
                 </div>
                 <div class="mb-3">
@@ -41,7 +41,7 @@
                         @endforeach
                     </select>
                     @error('category')
-                        <p class="text-danger fst-italic fs-8">{{ $message }}</p>
+                        <p class="text-danger fst-italic fs-8">{{ __("ui.$message") }}</p>
                     @enderror
                 </div>
                 <div class="mb-3">

@@ -8,6 +8,20 @@ return [
   'insertNewArticle' => 'Insert an article',
   'showArticle' => 'Find out more',
   'reviewArticle' => 'Review',
+  
+  // login
+
+  'The email field is required.' => 'The email field is required.',
+  'The password field is required.' => 'The password field is required.',
+  'These credentials do not match our records.' => 'These credentials do not match our records.',
+
+  // register
+
+  'The name field is required.' => 'The name field is required.',
+  'The email field is required.' => 'The email field is required.',
+  'The password field is required.' => 'The password field is required.',
+  'The password field must be at least 8 characters.' => 'The password field must be at least 8 characters.',
+  'The password field confirmation does not match.' => 'The password field confirmation does not match.',
 
   // navbar
 
@@ -39,6 +53,8 @@ return [
   'insertArticle' => 'Insert an article',
   'recentArticles' => 'Our latest articles',
   'noInsertedArticles' => 'No articles have been added yet',
+
+  'You have successfully applied to become a reviewer' => 'You have successfully applied to become a reviewer',
 
   //cards
 
@@ -81,6 +97,17 @@ return [
   'preview' => 'Preview',
   'insert' => 'Insert',
 
+  'The title field is required.' => 'The title field is required.',
+  'The description field is required.' => 'The description field is required.',
+  'The price field is required.' => 'The price field is required.',
+  'The category field is required.' => 'The category field is required.',
+
+  'The title field must be at least 5 characters.' => 'The title field must be at least 5 characters.',
+  'The description field must be at least 10 characters.' => 'The description field must be at least 10 characters.',
+  'The selected category is invalid.' => 'The selected category is invalid.',
+
+  'Article created successfully' => 'Article created successfully',
+
   // revisor.index
 
   'noArticlesToReview' => 'There are currently no ads to review',
@@ -94,5 +121,7 @@ return [
   'medical' => 'Medical',
   'violence' => 'Violence',
   'racy' => 'Racy',
-  'correctHeader' => 'Correct revisions'
+  'correctHeader' => 'Correct revisions',
+  'Article successfully accepted' => 'Article successfully accepted',
+  'Article successfully rejected' => 'Article successfully rejected'
 ];

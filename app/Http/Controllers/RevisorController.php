@@ -35,7 +35,7 @@ class RevisorController extends Controller
         $article->setAccepted(true);
         $article->save();
 
-        return redirect()->back()->with('success', 'Articolo accettato con successo');
+        return redirect()->back()->with('success', 'Article successfully accepted');
     }
 
     public function reject(Article $article)
@@ -43,14 +43,14 @@ class RevisorController extends Controller
         $article->setAccepted(false);
         $article->save();
 
-        return redirect()->back()->with('success', 'Articolo rifiutato con successo');
+        return redirect()->back()->with('success', 'Article successfully rejected');
     }
 
     public function becomeRevisor()
     {
         Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
 
-        return redirect()->route('homepage')->with('success', 'Hai chiesto di diventare revisore con successo');
+        return redirect()->route('homepage')->with('success', 'You have successfully applied to become a reviewer');
     }
 
     public function makeRevisor(User $user)

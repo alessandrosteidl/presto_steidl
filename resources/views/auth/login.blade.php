@@ -12,14 +12,14 @@
                   <label for="email" class="form-label">Email</label>
                   <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email">
                   @error('email')
-                    <p class="text-danger fst-italic fs-8">{{ $message }}</p>
+                    <p class="text-danger fst-italic fs-8">{{ __("ui.$message") }}</p>
                   @enderror
                 </div>
                 <div class="mb-3">
                   <label for="password" class="form-label">Password</label>
                   <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password">
                   @error('password')
-                    <p class="text-danger fst-italic fs-8">{{ $message }}</p>
+                    <p class="text-danger fst-italic fs-8">{{ __("ui.$message") }}</p>
                   @enderror
                 </div>
                 <button type="submit" class="btn btn-outline-dark">{{ __('ui.login') }}</button>

@@ -70,7 +70,7 @@ class ArticleCreationForm extends Component
 
         $this->reset();
 
-        session()->flash('success', 'Articolo creato correttamente');
+        session()->flash('success', 'Article created successfully');
     }
 
     public function updatedTemporaryImages()

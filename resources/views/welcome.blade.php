@@ -1,7 +1,7 @@
 <x-layout title="Homepage">
     <div class="container">
         @if (session('success'))
-            <div class="alert alert-success text-center my-3">{{ session('success') }}</div>
+            <div class="alert alert-success text-center my-3">{{ __('ui.' . session('success')) }}</div>
         @endif
         @if (session('error'))
             <div class="alert alert-danger text-center my-3">{{ session('error') }}</div>
